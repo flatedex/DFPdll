@@ -243,7 +243,7 @@ namespace DFP
 			}
 			return Math.Sqrt(norm);
 		}
-		public static double[,] Minimize(Func<double[], double> f, double[,] x0, double accuracy)
+		public static double[,] Minimize(Func<double[], double> f, double[,] x0, double accuracy, double _gradientTolerance, double _newAccuracy)
 		{
 			// Начальное приближение
 			double[,] x = x0;
@@ -252,8 +252,8 @@ namespace DFP
 			// Устанавливаем максимальное число итераций
 			int maxIterations = 30000;
 			// Устанавливаем пороговое значение для нормы градиента, т.н. точность
-			double gradientTolerance = 1e-6;
-			double newAccuracy = 1e-3;
+			double gradientTolerance = _gradientTolerance; // recomended 1e-6
+			double newAccuracy = _newAccuracy; // recomended 1e-3
 
 			int k;
 			for (k = 0; k < maxIterations; k++)
