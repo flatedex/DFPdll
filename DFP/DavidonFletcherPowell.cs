@@ -296,7 +296,6 @@ namespace DFP
 				x = xNewMatrix;
 				A0 = A;
 			}
-			System.Console.WriteLine("   " + k.ToString());
 			// Если не удалось достичь заданной точности за максимальное число итераций,
 			// возвращаем последнее
 
